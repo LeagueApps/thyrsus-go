@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/cedrus-and-thuja/thyrus-go/pkg/thyrsus"
+	"github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus"
 	"github.com/stretchr/testify/assert"
 )
 
