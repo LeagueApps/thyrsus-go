@@ -55,6 +55,9 @@ func JSONMockResponse(status int, body interface{}, headers map[string]string) M
 	if err != nil {
 		data = []byte(err.Error())
 	}
+	if headers == nil {
+		headers = make(map[string]string)
+	}
 	headers["ContentType"] = "application/json"
 	return MockResponse(BaseMockResponse{
 		status:  status,
