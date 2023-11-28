@@ -1,0 +1,25 @@
+mode: atomic
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:37.42,39.2 1 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:41.43,43.2 1 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:45.57,47.2 1 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:55.93,57.16 2 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:57.16,59.3 1 1
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:60.2,65.4 2 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:68.34,73.2 1 7
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:75.73,77.2 1 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:79.118,81.2 1 2
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:83.39,84.109 1 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:84.109,86.29 2 7
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:86.29,89.4 2 1
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:89.9,91.36 2 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:91.36,94.5 2 1
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:94.10,97.47 3 5
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:97.47,98.65 1 2
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:98.65,102.7 3 1
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:104.5,104.51 1 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:104.51,107.6 2 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:108.5,109.38 2 4
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:113.2,115.27 3 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:118.32,120.2 1 6
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:122.59,123.33 1 2
+github.com/cedrus-and-thuja/thyrsus-go/pkg/thyrsus/main.go:123.33,125.3 1 0

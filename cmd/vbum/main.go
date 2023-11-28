@@ -45,14 +45,15 @@ func main() {
 		lauge.Printf("patch version number is %d\n", v.Patch)
 		lauge.Printf("pre version number is %s\n", v.PreRelease)
 		lauge.Printf("meta version number is %s\n", v.Metadata)
+		lauge.Printf("tgt  is %s\n", tgt)
 	}
 	switch tgt {
 	case "major":
 		v.BumpMajor()
 	case "minor":
-		v.BumpMajor()
+		v.BumpMinor()
 	case "patch":
-		v.BumpMajor()
+		v.BumpPatch()
 	}
 	if pre != "" {
 		v.PreRelease = semver.PreRelease(pre)

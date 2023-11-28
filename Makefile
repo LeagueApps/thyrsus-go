@@ -1,6 +1,6 @@
 
 test:
-	go test ./pkg/thyrsus
+	@bash ./scripts/tests.sh
 
 fmt:
 	go fmt $$(go list ./...)

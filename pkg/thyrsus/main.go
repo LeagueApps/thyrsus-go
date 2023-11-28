@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"slices"
 	"testing"
 )
 
@@ -46,17 +47,15 @@ func (res BaseMockResponse) Headers() map[string]string {
 }
 
 type MockRequest struct {
-	Url      string
-	Response MockResponse
+	Url            string
+	Response       MockResponse
+	RequestHeaders map[string]string
 }
 
 func JSONMockResponse(status int, body interface{}, headers map[string]string) MockResponse {
 	data, err := json.Marshal(body)
 	if err != nil {
 		data = []byte(err.Error())
-	}
-	if headers == nil {
-		headers = make(map[string]string)
 	}
 	headers["ContentType"] = "application/json"
 	return MockResponse(BaseMockResponse{
@@ -77,6 +76,10 @@ func (exp *ExpectHttp) ExpectRequest(url string, response MockResponse) {
 	exp.requests = append(exp.requests, &MockRequest{Url: url, Response: response})
 }
 
+func (exp *ExpectHttp) ExpectRequestWithHeaders(url string, response MockResponse, requestHeaders map[string]string) {
+	exp.requests = append(exp.requests, &MockRequest{Url: url, Response: response, RequestHeaders: requestHeaders})
+}
+
 func (exp *ExpectHttp) Start() string {
 	exp.testServer = httptest.NewUnstartedServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		exp.request_log = append(exp.request_log, r)
@@ -91,6 +94,13 @@ func (exp *ExpectHttp) Start() string {
 			} else {
 				exp.requests = exp.requests[1:]
 				logger.Printf("request received: %s", r.RequestURI)
+				for k, v := range expected.RequestHeaders {
+					if val, ok := r.Header[k]; !ok || !slices.Contains(val, v) {
+						exp.Errors = append(exp.Errors, fmt.Sprintf("expected %s header to contain %s, it did not", k, v))
+						w.WriteHeader(500)
+						return
+					}
+				}
 				for k, v := range expected.Response.Headers() {
 					logger.Printf("setting response header: %s", k)
 					w.Header().Set(k, v)
