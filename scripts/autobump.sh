@@ -33,4 +33,4 @@ case "$log" in
 esac
 
 echo $new
-
+git tag $new
